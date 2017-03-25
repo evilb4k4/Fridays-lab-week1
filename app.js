@@ -14,8 +14,8 @@ function sum(a,b){ //eslint-disable-line
   console.log('It works');
   return arrayMath;
 }
-
-// // Here is the test for sum(); uncomment it to run it
+//
+// // // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -35,8 +35,8 @@ function multiply(a,b){ //eslint-disable-line
   console.log('It works again');
   return arrayMult;
 }
-
-// Here is the test for multiply(); uncomment it to run it
+//
+// // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -51,11 +51,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+  var result = sum(a,b);
+  var totalSum = sum(result[0],c);
+  var multiplyResult = multiply(a,b);
+  var totalMultiply = multiply(multiplyResult[0],c);
+  var sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + totalSum[0] + '.';
+  var multiplyString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + totalMultiply[0] + '.';
+  var totalArray = [totalSum[0], totalMultiply[0], sumString, multiplyString];
+  console.log(totalArray);
+  return totalArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -95,3 +103,6 @@ function multiplyArray(testArray){ //eslint-disable-line
 // testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+testMultiply(5,9);
+
+testSumAndMultiply(4,7,5);
